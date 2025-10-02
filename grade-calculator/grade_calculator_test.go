@@ -34,6 +34,41 @@ func TestGetGradeB(t *testing.T) {
 	}
 }
 
+// Added test case for C grade for code coverage
+func TestGetGradeC(t *testing.T) {
+	expected_value := "C"
+
+	gradeCalculator := NewGradeCalculator()
+
+	gradeCalculator.AddGrade("open source assignment", 75, Assignment)
+	gradeCalculator.AddGrade("exam 1", 72, Exam)
+	gradeCalculator.AddGrade("essay on ai ethics", 79, Essay)
+
+	actual_value := gradeCalculator.GetFinalGrade()
+
+	if expected_value != actual_value {
+		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, actual_value)
+	}
+}
+
+// Added test case for D grade for code coverage
+func TestGetGradeD(t *testing.T) {
+	expected_value := "D"
+
+	gradeCalculator := NewGradeCalculator()
+
+	gradeCalculator.AddGrade("open source assignment", 67, Assignment)
+	gradeCalculator.AddGrade("exam 1", 62, Exam)
+	gradeCalculator.AddGrade("essay on ai ethics", 64, Essay)
+
+	actual_value := gradeCalculator.GetFinalGrade()
+
+	if expected_value != actual_value {
+		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, actual_value)
+	}
+}
+
+
 func TestGetGradeF(t *testing.T) {
 	expected_value := "F"
 
@@ -49,4 +84,17 @@ func TestGetGradeF(t *testing.T) {
 	if expected_value != actual_value {
 		t.Errorf("Expected GetGrade to return '%s'; got '%s' instead", expected_value, actual_value)
 	}
+}
+
+// Added test case for GradeType String method for code coverage
+func TestGradeTypeString(t *testing.T) {
+    if Assignment.String() != "assignment" {
+        t.Errorf("Expected to return 'assignment', got '%s'", Assignment.String())
+    }
+    if Exam.String() != "exam" {
+        t.Errorf("Expected to return 'exam', got '%s'", Exam.String())
+    }
+    if Essay.String() != "essay" {
+        t.Errorf("Expected to return 'essay', got '%s'", Essay.String())
+    }
 }
