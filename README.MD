@@ -9,6 +9,7 @@ There are **three main files** in this project besides the README.md:
 - **grade_calculator_test.go:** file that uses Go’s testing package to run unit tests for the grading scale and system.
 
 For more information on Go and documentation go to this link: https://go.dev/ 
+
 For information on utilizing Go in practice go to this link: https://www.geeksforgeeks.org/go-language/go/ 
 
 ## This project's runtime requirements:
